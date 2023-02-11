@@ -1,0 +1,194 @@
+
+\newcommand{\Pgcd}{{\rm Pgcd}}
+
+{\textsc{\underline{Question 3 sur l'induction et la récursivité (\textbf{20} points)}}}\\
+
+
+Les parties A et B sont \underline{indépendantes}.\\
+
+\textbf{Partie A} (10 points) D\'efinitions inductives\\
+    
+Soit $\mathcal{B}$ un ensemble de cha{\^\i}nes binaires, défini récursivement de la mani\`ere suivante~:
+\begin{enumerate}
+    \item[$\bullet$] \textbf{Cas de base.} $\varepsilon \in \mathcal{B}$;  %0 \in \mathcal{B}; 1 \in \mathcal{B};$
+
+    \item[$\bullet$] \textbf{R\`egles r\'ecursives.} Si la cha{\^\i}ne  $b \in \mathcal{B}$, alors,
+    
+    \begin{enumerate}[R1.]
+     \item   $1b0 \in \mathcal{B} $  \quad\mbox{(r\`egle 1)}
+     \item   $0b1 \in \mathcal{B}$  \quad\mbox{(r\`egle 2)} 
+     \item  $bb \in \mathcal{B}$  \quad\mbox{     (r\`egle 3)}
+    \end{enumerate}
+
+\end{enumerate} 
+\begin{enumerate}[\bf 1)]
+\item\bareme{2}Parmi les cha{\^\i}nes binaires suivantes, lesquelles sont des \'el\'ements de $\mathcal{B}$?
+
+$0010 1011$, $000000$, $0101$, $01010101$, $11001100$, $0$, $0110110$, $010101010101$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Solution                    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{framed}
+
+RÉPONSE: $00101011 \in \mathcal{B}$ \\
+        $0101 \in \mathcal{B}$ \\
+        $01010101 \in \mathcal{B}$ \\
+        $11001100 \in \mathcal{B}$ \\
+        $010101010101 \in \mathcal{B}$ \\
+
+\end{framed}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\item\bareme{2} Calculer toutes les cha{\^\i}nes de $\mathcal{B}$ de longueur $n<11$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Solution                    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{framed}
+
+RÉPONSE: Je calcule les chaînes de $\mathcal{B}$ de longueur $n<11$ : \\
+Si la chaîne $\mathcal{B}$ est de longueur n=2, le nombre de chaîne est de $2$\\
+Les chaines de $B$ de longueur 2:\\ $01$ \\ $10$.\\
+Si $\mathcal{B}$ est de longueur n=4, alors le nombre de chaîne est de $4$.\\
+Les chaines de $B$ de longueur 4: \\ $0101$ \\ $0011$ \\ $1010$ \\ $1100$\\
+Si $\mathcal{B}$ est de longueur n=6, alors le nombre de chaîne est de $8$.\\
+Les chaines de $B$ de longueur 6: \\ $001011$ \\ $001101$ \\ $010101$ \\ $010011$\\ $101010$ \\ $101100$ \\ $110100$ \\ $110010$\\
+Si $\mathcal{B}$ est de longueur n=8, alors le nombre de chaîne est de $16$.\\
+Les chaines de $B$ de longueur 8: \\ $00101011$ \\ $00101101$ \\ $00110011$ \\ $00110101$\\ $01001011$ \\ $01001101$ \\ $01010011$ \\ $01010101$\\ $10101010$ \\ $10101100$ \\ $10110010$ \\ $10110100$\\ $11001010$ \\ $11001100$ \\ $11010010$ \\ $11010100$\\
+Si $\mathcal{B}$ est de longueur n=10, alors le nombre de chaîne est de $32$.\\
+Les chaines de $B$ de longueur 10:\\ $0101010101$ \\ $0101010011$ \\
+$0101001101$ \\ $0101001011$ \\ $0100110101$ \\ $010011001 1$ \\ $0100101101$ \\ $0100101011$ \\ $0011010101$ \\ $0011010011$ \\ $0011001101$ \\ $0011001011$ \\ $0010110101$ \\ $0010110011$ \\ $0010101101$ \\ $0010101011$ \\ $1101010100$ \\ $1101010010$ \\
+$1101001100$ \\ $1101001010$ \\ $1100110100$ \\ $1100110010$ \\ $1100101100$ \\ $1100101010$ \\ $1011010100$ \\ $1011010010$ \\ $1011001100$ \\ $1011001010$ \\ $1010110100$ \\ $1010110010$ \\ $1010101100$ \\ $1010101010$
+\end{framed}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\item\bareme{3} Montrer que toutes les cha{\^\i}nes  de $\mathcal{B}$ ont un nombre \'egal de $0$ et de $1$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Solution                    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{framed}
+
+RÉPONSE: Les chaînes de $\mathcal{B}$ sont des chaînes binaires. On obtient les nombres binaires à partir du reste de la division euclidiènne d'un nombre par $2$, or il n'y a que deux restes possibles après une division par $2$, ($0$ ou $1$).
+Alors on peut conclure que toutes les chaînes binaires sont composées que de $0$ et de $1$, étant donné que $\mathcal{B}$ est une chaine binaire alors elle est compte que des $0$ et des $1$.
+
+\end{framed}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item\bareme{3} Montrer que toutes les cha{\^\i}nes  de $\mathcal{B}$ sont de longueur paire
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Solution                    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{framed}
+
+RÉPONSE:
+$\mathcal{B}$ est une chaîne binaire qui repond aux règles suivants:\\ 
+$1b0 \in \mathcal{B} $, $0b1 \in \mathcal{B} $ et $bb \in \mathcal{B} $\\
+$b$ est une séquence binaire qui peut-être une chaîne vide ou peut prendre plusieurs chaînes de longueur $2$ ($01$ ou $10$).\\
+Vu cette configuration est peut importe le nombre de $b$ ajouté, on obtiendra une chaine de longueur paire car le produit de tout entier par $2$ sera pair. \\
+Donc toutes les chaînes de $\mathcal{B}$ sont de longueur paire.
+
+\end{framed}
+\end{enumerate}
+
+\newpage
+\textbf{Partie B} (10 points) Algorithmes r\'ecursifs\\
+
+Pour calculer le plus grand commun diviseur de deux entiers positifs on peut utiliser
+l'algorithme suivant:\\
+\rule{0.8\textwidth}{0.4mm}
+            \begin{algorithmic}[1]
+                \Function{\Pgcd}{a,b: Entiers} 
+                \If {$(a\bmod b = 0)$} 
+                    \State \Return{($b$)}
+                \Else 
+                    \State \Return{$\Pgcd(b, a\bmod b)$}
+                 \EndIf
+                \EndFunction
+            \end{algorithmic}
+\rule{0.8\textwidth}{0.4mm}
+
+
+\begin{enumerate}[\bf 1)]
+\item\bareme{5}  Faites la trace d'ex\'ecution  de cet algorithme sur l'appel
+  $$\Pgcd(420,567)$$
+
+\begin{framed}
+
+RÉPONSE:\\
+\setcounter{MaxMatrixCols}{20}
+\[
+\begin{matrix}
+ Nbre Appel&\vline&Pgcd \\
+\hline
+1&\vline&(567,420)  \\
+2&\vline&(420,147)  \\
+3&\vline&(147,126)  \\
+4&\vline&(126,21)=21  \\
+\end{matrix}
+\]
+
+\end{framed}
+
+\item\bareme{5} D\'eterminez le nombre d'appels effectu\'es en fonction de $n$ dans le cas des appels suivants:
+$$\Pgcd(F_{n - 1},F_n) \quad \mbox{et} \quad \Pgcd(F_n, F_{n-1}),$$
+o\`u $F_n$ est la suite d\'efinie par
+$\
+F_0=0 ; F_1=1;
+F_n=F_{n- 1}+F_{n-2}$ si $n\geq 2$.
+Pour vous donner une id\'ee, essayez de calculer $\Pgcd(34,55)$ et $\Pgcd(55,34)$.
+
+
+
+\begin{framed}
+
+RÉPONSE:\\
+Je determine le nombre d'appels effectués en fonction de n:
+
+je calcule d'abord $\Pgcd(34,55)$
+\setcounter{MaxMatrixCols}{20}
+\[
+\begin{matrix}
+ Nbre Appel&\vline&Pgcd \\
+\hline
+1&\vline&(34,55)  \\
+2&\vline&(55,34)  \\
+3&\vline&(34,21)  \\
+4&\vline&(21,13)  \\
+5&\vline&(13,8)\\
+6&\vline&(8,5)\\
+7&\vline&(5,3)\\
+\end{matrix}
+\]
+\[
+\begin{matrix}
+8&\vline&(3,2)\\
+9&\vline&(2,1)=1\\
+\end{matrix}
+\]
+
+je calcule d'abord $\Pgcd(55,34)$
+\setcounter{MaxMatrixCols}{20}
+\[
+\begin{matrix}
+ Nbre Appel&\vline&Pgcd \\
+\hline
+1&\vline&(55,34)  \\
+2&\vline&(34,21)  \\
+3&\vline&(21,13)  \\
+4&\vline&(13,8)\\
+5&\vline&(8,5)\\
+6&\vline&(5,3)\\
+7&\vline&(3,2)\\
+8&\vline&(2,1)=1\\
+\end{matrix}
+\]
+Conclusion: On peut en-conclure que :\\
+Pour trouver le Pgcd($F_{n-1},F_n)$ on fait $n-1$ appels.\\
+Pour trouver le Pgcd($F_n,F_{n-1})$ on fait $n-2$ appels.
+
+\end{framed}
+\end{enumerate}
+
+

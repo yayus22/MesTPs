@@ -1,0 +1,275 @@
+%%%%%%%%%%%%%%%%%%%%%%%
+%
+%   Question 1
+%
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent
+{\textsc{\underline{Question 1 sur les algorithmes et la complexit\'e (\textbf{20} points)}}} %
+\\
+
+Les parties A et B sont \underline{ind\'ependantes}.\\
+
+\textbf{Partie A} (10 points)\\
+
+
+
+Soit $a = (a_1, a_2, ..., a_n)$ une suite d'entiers naturels. Consid\'erons l'algorithme suivant
+
+
+
+%        \begin{algorithm}
+%         \setstretch{1}
+
+\rule{0.8\textwidth}{0.4mm}
+            \begin{algorithmic}[1]
+                \Procedure{Mystere} {$T$ : Tableau d'entiers} 
+                    \State $n \gets Longueur(T)$
+                    \State $i \gets 0 $
+                    \While{$ i < n-1$}
+                       \State $p \gets i$
+                        \For{$j \gets i+1,i+2,..., n-1$}
+                           \If{$T[j] < T[p]$} {$p\gets j$}\EndIf
+                        \EndFor
+                        \State $t\gets T[p] ; T[p] \gets T[i] ; T[i] \gets t$
+                        \State $i \gets i+1$
+                    \EndWhile
+                \EndProcedure
+            \end{algorithmic}
+\rule{0.8\textwidth}{0.4mm}
+%        \end{algorithm}
+
+        
+\vspace{.25in}
+\begin{enumerate}[1)]
+\item \bareme{5}Faites une trace de l'ex\'ecution de l'algorithme {\tt Mystere} dans le cas de
+la suite \bigskip
+
+\centerline{{\large \tt T = (-3, 0, 10, -11, 0, 13, -9, 17).}}
+
+
+\medskip
+Plus pr\'ecis\'ement, vous devez donner les valeurs de {\tt i}, {\tt p} et 
+{\tt T[0],T[1],T[2],...,T[7]}
+apr\`es  chaque it\'eration de la boucle ext\'erieure {\bf tant que} 
+(\`a la ligne 10).\\
+\smallskip
+
+\begin{framed}
+
+
+{\large
+\begin{center}
+{\tt
+\begin{tabular}{|r|r|r|r|r|r|r|r|r|r|} \hline
+i&~p~&T[0]&T[1]&T[2]&T[3]&T[4]&T[5]&T[6]&T[7]\\  \hline
+ & & -3& 0&10 &-11& 0& 13& -9&17\\  \hline
+0 & 3& -11& 0& 10& -3& 0& 13& -9&17 \\  \hline
+1 & 6& -11& -9& 10&  -3& 0& 13& 0&17 \\  \hline
+2 & 3& -11& -9& -3&  10& 0& 13& 0&17 \\  \hline
+3 & 4& -11& -9& -3& 0& 10& 13& 0&17  \\  \hline
+4 & 6& -11& -9& -3&  0& 0& 10& 13&17 \\  \hline
+5 & 6& -11& -9& -3&  0& 0& 10& 13&17 \\  \hline
+6& 6& -11& -9& -3&  0& 0& 10& 13&17 \\  \hline
+\end{tabular}}
+\end{center}
+}
+\end{framed}
+\vspace{.25in}
+\item \bareme{2}
+Que fait cet algorithme?
+\begin{framed}
+R\'EPONSE:
+Cet algorithme permet de trier de dans l'ordre croissant le suite de nombre entier a = (a1, a2 , ... , an).
+
+\end{framed}
+
+\vspace{.25in}
+\item \bareme{3}
+Donnez un estim\'e avec la notation ${\cal O}$ du nombre de comparaisons effectu\'ees par cet algorithme en fonction de $n$. 
+
+
+\begin{framed}
+R\'EPONSE:
+Je donne une notation ${\cal O}$ du nombre de comparaisons éffectuées en fonction de $n$ : \\
+Soit $x$ le nombre de comparaison : \\
+$x$ = $((n+(n-1))+(n+(n-3))+...+1)+n-1$ \\
+$x$ = $n^2+(n-1)$ donc x est ${\cal O}(n^2)$ \\
+
+\end{framed}
+
+\item \bareme{5} {\bf Question Bonus}.
+Donnez un exemple de tableau d'entiers pour le {\bf pire cas} et un exemple pour le {\bf meilleur cas} de l'algorithme {\tt Mystere} et donner dans chacun des cas le nombre de comparaisons effectu\'ees
+
+\begin{framed}
+R\'EPONSE:
+Le pire ou le meilleur des cas dependent de la longueur du tableau.
+Je donne un exemple de tableau d'entier  et nombre de comparaison éffectuée: \\
+T = (7,0,32,-3,2,-17); n=6; \\
+$x$ =$6^2+(6-1)$ \\
+$x$ = $41$ donc il y'aura 41 comparaisons éfféctuées dans le pire ou le meilleur des cas. \\
+\end{framed}
+
+\end{enumerate}
+%
+
+
+
+\newpage
+\textbf{Partie B} (10 points)\\
+
+Soit  deux ensembles ~{\tt A = \{-1,0,1,2,3,4,5\}}~  et  ~{\tt B = \{a,b,c,d,e,f,g,h\}}. On consid\`ere la fonction ~{\tt F: A --> B}~ donn\'ee  comme sous-ensemble~  {\tt R$_F$ $ \subseteq$ A $\times$ B} 
+\begin{align*}
+  R_F &= \{ (x,F(x)) | x\in A \}\\
+   &= \{(-1,g),(0,a),(1,e),(2,d),(3,d),(4,f),(5,c))\}
+\end{align*}
+
+
+
+\begin{enumerate}[1)]
+
+\item\bareme{2} Donner la repr\'esentation de {\tt F} par la table $T$  d\'efinie par 
+\[ T[x,y] = 1 \text{   si   } F(x) = y ;\quad T[x,y] = 0 \text{   si   }F(x)\neq y .\]
+
+
+
+\begin{framed}
+
+
+\begin{center}
+{\large\tt
+\begin{tabular}{|r|r|r|r|r|r|r|r|r|} \hline
+F&a~&b~&c~&d~&e~&f~&g~&h~\\  \hline
+% & & 3& 7&2 &1& 2& 8& 9\\  \hline
+-1 & 0& 0& 0& 0& 0& 0& 1&0  \\  \hline
+0 & 1& 0& 0& 0& 0& 0& 0&0  \\  \hline
+1 & 0& 0& 0& 0& 1 & 0& 0&0 \\  \hline
+2 & 0& 0& 0& 1& 0 & 0& 0&0 \\  \hline
+3 & 0& 0& 0& 1& 0& 0& 0&0  \\  \hline
+4 & 0& 0& 0& 0& 0 & 1& 0&0 \\  \hline
+5 & 0& 0& 1& 0& 0 & 0& 0&0 \\  \hline
+\end{tabular}
+}
+
+\end{center}
+
+\end{framed}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Solution                    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\vspace{.4cm}
+\item\bareme{4} Donner un algorithme pour d\'ecider si une fonction repr\'esent\'ee par un tableau est injective.
+\begin{framed}
+
+%        \begin{algorithm}
+%         \setstretch{1}
+
+\rule{0.8\textwidth}{0.4mm}
+            \begin{algorithmic}[1]
+                \Function{Est\_Injective} {$T$ : Tableau d'entiers} : bool\'een
+                    \State $n,m \gets Longueur(T)$
+                    \State $i \gets 0 $
+                    \If{$i>=n$} retourner faux
+                    \EndIf
+                    \While{$ i < n$}
+                       \State $j \gets 0$
+                        \State $x \gets 0 $
+                        \While{$j < m$}
+                           \If{$F(T[i]) = T[j]$} $T[i,j] \gets 1$ 
+                            \State Sinon $T[i,j] \gets 0$
+                           \EndIf
+                           \State $x = x + T[i,j]$
+                           \State $j \gets j+1$
+                        \EndWhile
+                        \If{$x \ne 1$} retourner faux
+                        \EndIf
+                        \State $i \gets i+1$
+                    \EndWhile
+                    \State retourner vraie
+                \EndFunction
+            \end{algorithmic}
+\rule{0.8\textwidth}{0.4mm}
+%        \end{algorithm}
+
+\vspace{.5cm}
+Donner la complexit\'e (en pire cas et meilleur cas) de cet algorithme en fonction de $|A|=n$ et $|B|=m$ pour une fonction
+\begin{enumerate}[(i)]
+\item injective:
+Lorsqu'une fonction est injective, la complèxité est de :\\
+Pour le meilleur et le pire cas est  ${\cal O}(n)$, car il y'a
+$(2m+1)*n+2n+2$ comparaisons.\\
+\item non injective: 
+Lorsqu'une fonction n'est pas injective, la complèxité est de :\\
+Pour le meilleur des cas:  ${\cal O}(1)$ car il y'a qu'une comparaison.\\
+Pour le pire cas: ${\cal O}(n)$ car il y'a $(2m+1)*n+2n+1$ comparaison.\\
+
+\end{enumerate}
+Justifiez vos r\'eponses.\\
+Lorsqu'une fonction est injective, tous les éléments seront parcourus jusqu'au dernier, donc toutes comparaisons possibles seront faites dans le meilleur ou le pire des cas. Alors la complèxité est de  ${\cal O}(n)$ :\\
+$n*(2m+1)+(2n+1)+1$.\\
+Exemple : $|A|=3$ et $|B|=5$ \\
+Le nombre $Nb$ de comparaison éffectuée est : \\
+$Nb = 3*(10+1)+(6+1)+1 = 41$
+
+Lorsqu'une fonction n'est pas injective, dans le meilleur des cas il fera 1 comparaison sinon dans le pire des cas il fera une comparaison de moins qu'une fonction injective.
+\end{framed}
+
+\newpage
+\item\bareme{4} Donner un algorithme pour d\'ecider si une fonction repr\'esent\'ee par un tableau est surjective
+\begin{framed}
+
+\rule{0.8\textwidth}{0.4mm}
+            \begin{algorithmic}[1]
+                \Function{Est\_Surjective} {$T$ : Tableau d'entiers} : bool\'een
+                    \State $n,m \gets Longueur(T)$
+                    \State $j \gets 0 $
+                    \If{$j>=m$} retourner faux
+                    \EndIf
+                    \While{$ j < m$}
+                       \State $i \gets 0$
+                       \State $x \gets 0 $
+                        \While{$i < n$}
+                           \If{$F(T[i]) = T[j]$} $T[i,j] \gets 1$ 
+                            \State Sinon $T[i,j] \gets 0$
+                           \EndIf
+                           \State $x = x + T[i,j]$
+                           \State $j \gets j+1$
+                        \EndWhile
+                        \If{$x = 0$} retourner faux
+                        \EndIf
+                        \State $i \gets i+1$
+                    \EndWhile
+                    \State retourner vraie
+                \EndFunction
+            \end{algorithmic}
+\rule{0.8\textwidth}{0.4mm}
+
+\vspace{.5cm}
+Donner la complexit\'e (en pire cas et meilleur cas) de cet algorithme en fonction de $|A|=n$ et $|B|=m$ pour une fonction
+\begin{enumerate}[(i)]
+\item injective:
+Lorsqu'une fonction est injective, la complèxité est de  ${\cal O}(m)$ pour le meilleur et le pire cas car le nombre de comparaison est de :\\
+$(2n+1)*m+2m+2$.\\
+\item non injective: 
+Lorsqu'une fonction n'est pas injective, la complèxité est de :\\
+Pour le meilleur des cas  ${\cal O}(1)$.\\
+Pour le pire cas: ${\cal O}(m)$ car il y'a $(2n+1)*m+2m+1$ comparaison.\\
+\end{enumerate}
+Justifiez vos r\'eponses.
+Lorsqu'une fonction est surjective, tous les éléments seront parcourus jusqu'au dernier, donc toutes comparaisons possibles seront faites dans le meilleur ou le pire des cas. Alors la complèxité est de ${\cal O}(m)$ :\\
+$m*(2n+1)+(2m+1)+1$.\\
+Exemple : $|A|=3$ et $|B|=5$ \\
+Le nombre $Nb$ de comparaison éffectuée est : \\
+$Nb = 5*(6+1)+(10+1)+1 = 41$
+
+Lorsqu'une fonction n'est pas surjective, dans le meilleur des cas il fera 1 comparaison sinon dans le pire des cas il fera une comparaison de moins qu'une fonction surjecctive.
+\end{framed}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\end{enumerate}
+
+ \newpage

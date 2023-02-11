@@ -1,0 +1,48 @@
+Ce programme permet de placer des paris sur des courses hippiques virtuelles.
+
+Votre banque est vide.
+Pour continuer, entrez un montant a mettre en banque (0 pour quitter) : 10.5
+
+----
+MENU
+----
+1. Placer un pari
+2. Gerer la banque
+3. Quitter
+
+Entrez votre choix : 0
+
+Erreur, entrez un choix entre 1 et 3! Recommencez...
+
+----
+MENU
+----
+1. Placer un pari
+2. Gerer la banque
+3. Quitter
+
+Entrez votre choix : 4
+
+Erreur, entrez un choix entre 1 et 3! Recommencez...
+
+----
+MENU
+----
+1. Placer un pari
+2. Gerer la banque
+3. Quitter
+
+Entrez votre choix : w
+
+Erreur, entrez un choix entre 1 et 3! Recommencez...
+
+----
+MENU
+----
+1. Placer un pari
+2. Gerer la banque
+3. Quitter
+
+Entrez votre choix : 3
+
+AUREVOIR!

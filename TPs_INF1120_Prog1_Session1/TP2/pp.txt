@@ -1,0 +1,14 @@
+			DeBut
+	n ← Longueur(T)
+ i ← 0
+						 tant que i < n − 1 faire
+	 p ← i
+TaNT Que j ← i + 1, i + 2, ..., n − 1 faire
+        si T[j] < T[p] alors 
+	p ← j
+				fin si
+		fin Tant que
+t ← T[p]; T[p] ← T[i]; T[i] ← t
+					i ← i + 1
+fin tant que
+FIn

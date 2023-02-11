@@ -1,0 +1,137 @@
+\newcommand{\B}{\ensuremath{\mathbb{B}}}
+\newcommand{\D}{\ensuremath{\mathbb{D}}}
+\noindent
+{\textsc{\underline{Question 2 sur les entiers et la division (\textbf{20} points)}}}\\
+
+
+Les parties A et B sont \underline{indépendantes}.\\
+
+\textbf{Partie A} (8 points)\\
+Dans ce qui suit on utilise la base  $\B=\{0,1,2,3,4,5\}$ pour écrire les nombres.% en base $6$ (ici le 6 est écrit dans la base  décimale). 
+
+\begin{enumerate}[1. ]
+\item\bareme{1}Donner la table d'addition des nombres en base \B;
+\begin{framed}
+\[
+\begin{matrix}
++ &\vline&0 &1 &2 &3 &4 &5\\
+\hline
+0 &\vline&0 &1 &2 &3 &4&5\\
+1&\vline& 1& 2& 3& 4&5&10\\
+2&\vline& 2& 3& 4& 5&10&11\\
+3&\vline& 3& 4& 5& 10&11&12\\
+4&\vline& 4& 5& 10& 11&12&13\\
+5&\vline& 5& 10& 11& 12&13&14\\
+\end{matrix}
+\]
+
+\end{framed}
+\item\bareme{1}Donner la table de multiplication des nombres en base \B;
+\begin{framed}
+\[
+\begin{matrix}
+\times &\vline&0 &1 &2 &3 &4 &5\\
+\hline
+0 &\vline& 0& 0& 0& 0&0&0\\
+1&\vline& 0& 1& 2& 3&4&5\\
+2&\vline& 0& 2& 4& 10&12&14\\
+3&\vline& 0& 3& 10& 15&20&23\\
+4&\vline& 0& 4& 12& 20&24&32\\
+5&\vline& 0& 5& 14& 23&32&41\\
+\end{matrix}
+\]
+\end{framed}
+
+\item\bareme{1}Calculer $ x= 123454321+4142$;
+\begin{framed}
+REPONSE :
+Je calcule :
+$ x= 123454321+4142$ \\
+$ x= 123502503$
+\end{framed}
+\item\bareme{1}Calculer $ y= x * 215$;
+\begin{framed}
+REPONSE:
+Je calcule :
+$ y= x * 215$  \\
+$ y= 31531132153$
+\end{framed}
+\item\bareme{2}Convertir $ y $ dans la  base $\D=\{0,1,2\}$.
+\begin{framed}
+REPONSE:
+converssion des y en base D: \\
+$y = 111222210022200120$
+\end{framed}
+\item\bareme{2}Donner la liste ordonnée des  nombres premiers inférieurs ou égaux \`a  $135$ (ici $135$ désigne un nombre écrit en base \B);
+\begin{framed}
+REPONSE:
+Je donne a liste ordonnée des nombres premiers inférieurs ou égaux à $135$ en base \B : \\
+Convertissons $135$ en base $10$ : \\
+$135$ en base \B est égal à $59$ en base $10$. \\
+La liste des nombres premiers inférieurs ou égaux à $59$ en base $10$ sont : \\
+$2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59.$ \\
+Je les convertis en base \B : \\
+$2,3,5,11,15,21,25,31,35,45,51,101,105,111,115,125,135.$
+
+\end{framed}
+
+\end{enumerate}
+
+
+
+
+
+
+\newpage
+\textbf{Partie B} (12 points)\\
+
+Dans cette partie, on utilise la base décimale usuelle. Soit la suite $S_n= 3^n -4 \mod{13}$
+\begin{enumerate}[1. ]
+\item\bareme{4} Calculer les $15$ premiers termes de la suite.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Solution                    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{framed}
+La suite des $15$ premiers termes est;
+\[ (10,12,5,10,12,5,10,12,5,10,12,5,10,12,5)\]
+\end{framed}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item\bareme{8}Déterminer la forme des entiers naturels $n$ tels que $3^n -4\equiv 10\mod{13}$.\\ Conseil~: formuler une hypoth\`ese en examinant les premiers termes puis utiliser une démonstration par induction pour conclure.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Solution                    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{framed}
+{\bf Théor\`eme}.\\
+Soit $n$ un entier naturel, $3^n-4\equiv 10\mod{13}$ si et seulement si $n$ est un multiple de 3, $n = 3k$ avec $k \in N$
+
+{\bf Démonstration}\\
+pour $n=0$, $3^0-4\equiv 10\mod{13}$ \\
+pour $n=3$, $3^3-4\equiv 10\mod{13}$ \\
+pour $n=6$, $3^6-4\equiv 10\mod{13}$ \\
+Vu que la relation $3^n-4\equiv 10\mod{13}$ n'est vraie que si n prend des multiples de 3 alors $n=3*k$, avec k est un entier naturel.
+
+
+\begin{enumerate}
+    \item[$\bullet$] {\bf Initialisation}.\\
+    $k=0$ \\
+    $n=0$ \\
+    $P(n)=3^0-4 \equiv ? \mod{13}$ \\
+    $P(n)=-3 \equiv 10 \mod{13}$ vraie
+    \item[$\bullet$]  {\bf Hérédité}. \\
+    Supposons vraie la proposition P(n) et verifions au rang n+3 :
+    $3^{n+3}-4 \equiv ? \mod{13}$ \\
+    $3^n*3^3-4\equiv ? \mod{13}$ \\
+    or $3^{n}$ dans ce cas $n=3k$, donc $n$ est multiple de 3. \\
+       $3^3$ dans ce cas $n=3$, donc $n$ est multiple de 3. \\
+    donc dans $(3^{n}*3^3)$, n est multiple de 3\\
+    $(3^{n}*3)-4\equiv 10\mod{13}$ \\
+
+\item[$\bullet$]  {\bf Conclusion}. \\
+On a obtenue que $3^0-4\equiv 10\mod{13}$ est vraie, cette même proposition est vraie au rang n et n+3 donc, $\forall k \in N, n=3k$, $3^n-4\equiv 10\mod{13}$ est vraie.
+\end{enumerate}    
+
+\end{framed}
+
+\end{enumerate}
+
+

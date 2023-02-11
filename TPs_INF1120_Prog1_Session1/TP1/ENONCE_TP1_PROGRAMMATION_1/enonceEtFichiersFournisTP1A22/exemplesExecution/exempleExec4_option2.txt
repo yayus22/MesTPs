@@ -1,0 +1,107 @@
+Ce programme permet de placer des paris sur des courses hippiques virtuelles.
+
+Votre banque est vide.
+Pour continuer, entrez un montant a mettre en banque (0 pour quitter) : 100
+
+----
+MENU
+----
+1. Placer un pari
+2. Gerer la banque
+3. Quitter
+
+Entrez votre choix : 2
+
+---------------
+GERER LA BANQUE
+---------------
+
+** Montant en banque : 100.00$ **
+
+(A)jouter, (V)ider, ou (R)evenir au menu principal : e
+
+Erreur, entrez A, V ou R! Recommencez...
+
+** Montant en banque : 100.00$ **
+
+(A)jouter, (V)ider, ou (R)evenir au menu principal : 2
+
+Erreur, entrez A, V ou R! Recommencez...
+
+** Montant en banque : 100.00$ **
+
+(A)jouter, (V)ider, ou (R)evenir au menu principal : A
+
+Entrez le montant a ajouter (0 pour annuler) : -1
+
+Erreur, le montant doit etre plus grand ou egal a 0! Recommencez...
+Entrez le montant a ajouter (0 pour annuler) : 0
+
+** Montant en banque : 100.00$ **
+
+(A)jouter, (V)ider, ou (R)evenir au menu principal : a
+
+Entrez le montant a ajouter (0 pour annuler) : 15
+
+** Montant en banque : 115.00$ **
+
+(A)jouter, (V)ider, ou (R)evenir au menu principal : R
+
+----
+MENU
+----
+1. Placer un pari
+2. Gerer la banque
+3. Quitter
+
+Entrez votre choix : 1
+
+--------------
+PLACER UN PARI
+--------------
+
+Type de pari
+  1. Pari simple gagnant
+  2. Pari simple place
+  3. Pari couple gagnant ordonne
+  4. Pari couple gagnant non ordonne
+  5. Revenir au menu principal
+
+Entrez le type de pari : 1
+
+Chevaux
+  1. Gaspard
+  2. Bubulle
+  3. Babette
+  4. Socrate
+  5. Romarin
+  6. Canelle
+
+Entrez le numero du cheval : 1
+Entrez le montant de la mise (0 pour annuler) : -1
+
+Erreur, la mise doit etre entre 0.00$ et 115.00$! Recommencez...
+Entrez le montant de la mise (0 pour annuler) : 0
+
+----> OPERATION ANNULEE <----
+
+Appuyez sur <ENTREE> pour revenir au menu principal... 
+
+----
+MENU
+----
+1. Placer un pari
+2. Gerer la banque
+3. Quitter
+
+Entrez votre choix : 2
+
+---------------
+GERER LA BANQUE
+---------------
+
+** Montant en banque : 115.00$ **
+
+(A)jouter, (V)ider, ou (R)evenir au menu principal : v
+
+AUREVOIR!

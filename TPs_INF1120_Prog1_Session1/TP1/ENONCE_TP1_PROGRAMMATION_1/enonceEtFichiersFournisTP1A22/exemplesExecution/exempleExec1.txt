@@ -1,0 +1,18 @@
+Ce programme permet de placer des paris sur des courses hippiques virtuelles.
+
+Votre banque est vide.
+Pour continuer, entrez un montant a mettre en banque (0 pour quitter) : -1
+
+Erreur, le montant doit etre plus grand ou egal a 0! Recommencez...
+
+Votre banque est vide.
+Pour continuer, entrez un montant a mettre en banque (0 pour quitter) : -2
+
+Erreur, le montant doit etre plus grand ou egal a 0! Recommencez...
+
+Votre banque est vide.
+Pour continuer, entrez un montant a mettre en banque (0 pour quitter) : 0
+
+AUREVOIR!
+
+ 

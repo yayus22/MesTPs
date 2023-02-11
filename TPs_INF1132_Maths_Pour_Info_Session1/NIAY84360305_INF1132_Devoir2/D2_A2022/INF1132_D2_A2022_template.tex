@@ -1,0 +1,183 @@
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc} 
+%\usepackage[T1]{inputenc} 
+
+\usepackage[french]{babel}
+\usepackage{listings}
+
+\usepackage{graphicx}
+\usepackage[usenames]{color}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+
+\usepackage{framed}
+\usepackage{enumerate}
+%
+\usepackage{tabularx}
+\usepackage{mathrsfs}
+\usepackage{tikz}
+%\usepackage{calrsfs}
+\usepackage{fontawesome}
+% \usepackage{rotating}
+\usepackage{adjustbox}
+\usepackage{pifont}
+\usepackage{textcomp}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\bareme[1]{\makebox[0pt][r]{({\bf #1} pts)\hspace{0.8cm}}}
+
+%%%%%%%%%%%%%%%%% Algorithmes %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{algorithm,setspace}
+\usepackage{algpseudocode}
+
+\algrenewcommand\algorithmicfunction{\textbf{fonction}}
+\algrenewcommand\algorithmicend{\textbf{fin}}
+\algrenewcommand\algorithmicdo{\textbf{faire}}
+\algrenewcommand\algorithmicfor{\textbf{pour}}
+\algrenewcommand\algorithmicif{\textbf{si}}
+\algrenewcommand\algorithmicelse{\textbf{sinon}}
+\algrenewcommand\algorithmicthen{\textbf{alors}}
+\algrenewcommand\algorithmicreturn{\textbf{retourner}}
+\algrenewcommand\algorithmicwhile{\textbf{tant que}}
+
+\newcommand\com[1]{\Comment{\scriptsize\textcolor{red}{#1}\normalsize}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\newcommand{\red}{\textcolor{red}}   
+
+\addtolength{\topmargin}{-0.8in}
+\addtolength{\textheight}{1.2in} 
+\addtolength{\oddsidemargin}{-50pt}
+\addtolength{\textwidth}{100pt} %%%%
+\addtolength{\parindent}{-\parindent}
+
+\graphicspath{{./graphics/}}
+
+\title{INF1132 Session Automne 2022\\Devoir 2\\}
+\author{Professeurs : Sre\v{c}ko Brlek,  kelrB ok\v{c}erS} %Diego Maupomé}  
+\date{}
+
+\makeatletter
+\renewcommand\contentsname{\center Pondérations}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\allowdisplaybreaks
+
+\maketitle
+
+\thispagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hrule
+\bigskip
+Nom: NIARE YAYA
+\bigskip
+\hrule
+\bigskip
+Code permanent: NIAY84360305
+\bigskip
+\hrule
+\bigskip
+% Si s'applique, personne(s) avec qui vous avez collaboré (nom et groupe):\\
+\bigskip
+% \hrule
+
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+1& 2  &  3 &  4 & 5 &\textbf{Total} \\
+\hline
+ &  &  & & &  \\
+~~~~~~~/ $20$~ & ~~~~~~~/ $20$~  & ~~~~~~~/ $20$~& ~~~~~~~/ $20$~& ~~~~~~~/ $20$~ & ~~~~~~~~~~~~\textbf{/ $100$}~\\
+&  &  &  & &\\
+\hline
+\end{tabular}
+\end{center}
+
+  \begin{framed}
+	  \begin{footnotesize}
+		  \centerline{\large\textbf{Directives}}
+		  \begin{enumerate}
+		    \item Le devoir doit être rédigé \textbf{individuellement} et remis \textbf{avant le \textcolor{red}{8 décembre 2022 avant midi}}.
+		    \item \textbf{Aucun retard} n'est permis, car la solution sera mise en ligne après l'heure limite de remise.
+		    
+		    \item Votre document doit être {\textcolor{red}{\textbf{rédigé en \LaTeX{} }}}, à partir du modèle fourni incluant la page de couverture.
+		    \item Vous devez remplir cette page comme page couverture pour vous identifier lors de la remise de votre devoir sinon votre travail \textbf{ne sera pas corrigé}.
+		    \item Vous devez remettre sur Moodle \textcolor{red}{\textbf{un fichier compressé (.zip) contenant le pdf de votre devoir ET le code \LaTeX{} ayant servi à le générer.}} 
+		    \item Pour que votre devoir soit corrigé, l'archive doit obligatoirement être nommée :\\ \textcolor{red}{\textbf{VOTRECODEPERMANENT\_INF1132\_DEVOIR2.zip}}. 
+		    
+		    \item À moins d'avis contraire, \textcolor{red}{vous devez \textbf{justifier} chacune de vos réponses}.
+		    \item La démarche ainsi que l'utilisation correcte de la notation mathématique seront évaluées.
+		  \end{enumerate}
+	  \end{footnotesize}
+  \end{framed}
+  
+  
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%
+%   Question 1
+%
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%\input{devoirs/A2022/D2_A2022/Q1_AlgorithmesComplexite}
+\input{Q1_AlgorithmesComplexite}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%
+%   Question 2
+%
+%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%\input{devoirs/A2022/D2_A2022/Q2_Entiers}
+\input{Q2_Entiers}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%
+%   Question 3
+%
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%\input{devoirs/A2022/D2_A2022/Q3_Induction}
+\input{Q3_induction}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%
+%   Question 4
+%
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%\input{devoirs/A2022/D2_A2022/Q4_Relations}
+\input{Q4_Relations}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%
+%   Question 5
+%
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%\input{devoirs/A2022/D2_A2022/Q5_graphes}
+\input{Q5_graphes}
+
+\end{document}

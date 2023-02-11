@@ -1,0 +1,8 @@
+Debut
+  afficher "Entrez un nombre : "
+  lire nombre
+				Si nombre mod 2 = 0 alors
+afficher "C'est un nombre pair"				
+Fin si  
+
+Fin
