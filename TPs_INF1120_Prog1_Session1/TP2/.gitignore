@@ -1,3 +1,4 @@
+# Default ignored files
 .mtj.tmp/
 *.class
 *.jar
@@ -15,3 +16,4 @@ out/
 .vscode/
 .code-workspace
 .DS_Store
+
