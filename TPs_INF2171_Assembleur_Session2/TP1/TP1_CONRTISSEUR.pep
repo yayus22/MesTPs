@@ -42,194 +42,194 @@ loop3:   LDA     36,i        ; while (base > 36)
 ;
 floop23: LDA     nbr,d
 ;
-calcul:  CPA     base,d      ;while(nombre >= BASE)
-         BRLT    fcalcul     
+calcul:  CPA     base,d      ;if(nombre >= BASE)
+         BRLT    fcalcul     ;goto fcalcul
 ;
          SUBA    base, d     ;nombre = nombre - BASE
          ADDX    0x0001,i    ;Quotient++
          BR      calcul 
 ;         
-fcalcul: STX     quot, d
-         STA     reste, d
-         LDX     cont,d
-         STA     tab,x
-         ADDX    2,i
-         STX     cont,d
-         LDX     0,i
-         LDA     0,i
-         LDA     quot,d
-         CPA     base,d
-         BRGE    calcul
+fcalcul: STX     quot, d     ;quot = X
+         STA     reste, d    ;reste = A
+         LDX     cont,d      ;X = cont    
+         STA     tab,x       ;tab[X] = A
+         ADDX    2,i         ;X = X + 2
+         STX     cont,d      ;X = cont
+         LDX     0,i         ;X = 0
+         LDA     0,i         ;A = 0
+         LDA     quot,d      ;A = quot
+         CPA     base,d      
+         BRGE    calcul      ;while (A >= base)
 ;     
-         LDA     quot,d
-         LDX     cont,d
-         STA     tab,x
-         ADDX    2,i
+         LDA     quot,d      ;A = quot
+         LDX     cont,d      ;X = cont
+         STA     tab,x       ;tab[X] = A
+         ADDX    2,i         ;X = X + 2
          STX     cont,d
          LDX     0,i
 ;         
-fin2:    LDX     cont,d  
-         SUBX    2,i 
-loop5:   BRLT    done
+fin2:    LDX     cont,d      ;X = cont
+         SUBX    2,i         ;X = X - 2
+loop5:   BRLT    done        ;goto done
          LDA     10,i
-         CPA     tab,x
-         BRNE    A
-         STRO    As,d
-         SUBX    2,i
+         CPA     tab,x       ;if(tab[X] = 10)
+         BRNE    A           ;goto A
+         STRO    As,d        ;else System.out.print("A")
+         SUBX    2,i         ;X = X - 2
+         BR      loop5       
+A:       LDA     11,i        
+         CPA     tab,x       ;if(tab[X] = 11)
+         BRNE    B           ;goto B
+         STRO    Bs,d        ;else System.out.print("B")
+         SUBX    2,i         ;X = X - 2
          BR      loop5
-A:       LDA     11,i
-         CPA     tab,x
-         BRNE    B
-         STRO    Bs,d
-         SUBX    2,i
-         BR      loop5
-B:       LDA     12,i
-         CPA     tab,x
-         BRNE    C
-         STRO    Cs,d
-         SUBX    2,i
+B:       LDA     12,i        
+         CPA     tab,x       ;if(tab[X] = 12)
+         BRNE    C           ;goto C
+         STRO    Cs,d        ;else System.out.print("C")
+         SUBX    2,i         ;X = X - 2
          BR      loop5
 C:       LDA     13,i
-         CPA     tab,x
-         BRNE    D
-         STRO    Ds,d
-         SUBX    2,i
+         CPA     tab,x       ;if(tab[X] = 13)
+         BRNE    D           ;goto D
+         STRO    Ds,d        ;else System.out.print("D")
+         SUBX    2,i         ;X = X - 2
          BR      loop5
 D:       LDA     14,i
-         CPA     tab,x
-         BRNE    E
-         STRO    Es,d
-         SUBX    2,i
+         CPA     tab,x       ;if(tab[X] = 14)
+         BRNE    E           ;goto E
+         STRO    Es,d        ;else System.out.print("E")
+         SUBX    2,i         ;X = X - 2
          BR      loop5
-E:       LDA     15,i 
-         CPA     tab,x
-         BRNE    F
-         STRO    Fs,d
-         SUBX    2,i
+E:       LDA     15,i        
+         CPA     tab,x       ;if(tab[X] = 15)
+         BRNE    F           ;goto F
+         STRO    Fs,d        ;else System.out.print("F")
+         SUBX    2,i         ;X = X - 2
          BR      loop5
 F:       LDA     16,i 
-         CPA     tab,x
-         BRNE    G
-         STRO    Gs,d
-         SUBX    2,i
+         CPA     tab,x       ;if(tab[X] = 16)
+         BRNE    G           ;goto G
+         STRO    Gs,d        ;else System.out.print("G")
+         SUBX    2,i         ;X = X - 2
          BR      loop5
 G:       LDA     17,i 
-         CPA     tab,x
-         BRNE    H
-         STRO    Hs,d
+         CPA     tab,x       ;if(tab[X] = 17)
+         BRNE    H           ;goto H
+         STRO    Hs,d        ;else System.out.print("H")
          SUBX    2,i
          BR      loop5
 H:       LDA     18,i 
-         CPA     tab,x
-         BRNE    I
-         STRO    Is,d
-         SUBX    2,i
+         CPA     tab,x       ;if(tab[X] = 18)
+         BRNE    I           ;goto I
+         STRO    Is,d        ;else System.out.print("I")
+         SUBX    2,i         ;X = X - 2
          BR      loop5
 I:       LDA     19,i 
-         CPA     tab,x
-         BRNE    J
-         STRO    Js,d
-         SUBX    2,i
+         CPA     tab,x       ;if(tab[X] = 19)
+         BRNE    J           ;goto J
+         STRO    Js,d        ;else System.out.print("J")
+         SUBX    2,i         ;X = X - 2
          BR      loop5
 J:       LDA     20,i 
-         CPA     tab,x
-         BRNE    K
-         STRO    Ks,d
-         SUBX    2,i
+         CPA     tab,x       ;if(tab[X] = 20)
+         BRNE    K           ;goto K
+         STRO    Ks,d        ;else System.out.print("K")
+         SUBX    2,i         ;X = X - 2
          BR      loop5
 K:       LDA     21,i 
-         CPA     tab,x
-         BRNE    L
-         STRO    Ls,d
-         SUBX    2,i
+         CPA     tab,x       ;if(tab[X] = 21)
+         BRNE    L           ;goto L
+         STRO    Ls,d        ;else System.out.print("L")
+         SUBX    2,i         ;X = X - 2
          BR      loop5
 L:       LDA     22,i 
-         CPA     tab,x
-         BRNE    M
-         STRO    Ms,d
-         SUBX    2,i
+         CPA     tab,x       ;if(tab[X] = 22)
+         BRNE    M           ;goto M
+         STRO    Ms,d        ;else System.out.print("M")
+         SUBX    2,i         ;X = X - 2
          BR      loop5
 M:       LDA     23,i 
-         CPA     tab,x
-         BRNE    N
-         STRO    Ns,d
-         SUBX    2,i
+         CPA     tab,x       ;if(tab[X] = 23)
+         BRNE    N           ;goto N
+         STRO    Ns,d        ;else System.out.print("N")
+         SUBX    2,i         ;X = X - 2
          BR      loop5
 N:       LDA     24,i 
-         CPA     tab,x
-         BRNE    O
-         STRO    Os,d
-         SUBX    2,i
+         CPA     tab,x       ;if(tab[X] = 24)
+         BRNE    O           ;goto O
+         STRO    Os,d        ;else System.out.print("O")
+         SUBX    2,i         ;X = X - 2
          BR      loop5
 O:       LDA     25,i 
-         CPA     tab,x
-         BRNE    P
-         STRO    Ps,d
-         SUBX    2,i
+         CPA     tab,x       ;if(tab[X] = 25)
+         BRNE    P           ;goto P
+         STRO    Ps,d        ;else System.out.print("P")
+         SUBX    2,i         ;X = X - 2
          BR      loop5
 P:       LDA     26,i 
-         CPA     tab,x
-         BRNE    Q
-         STRO    Qs,d
-         SUBX    2,i
+         CPA     tab,x       ;if(tab[X] = 26)
+         BRNE    Q           ;goto Q
+         STRO    Qs,d        ;else System.out.print("Q")
+         SUBX    2,i         ;X = X - 2
          BR      loop5
 Q:       LDA     27,i 
-         CPA     tab,x
-         BRNE    R
-         STRO    Rs,d
-         SUBX    2,i
+         CPA     tab,x       ;if(tab[X] = 27)
+         BRNE    R           ;goto R
+         STRO    Rs,d        ;else System.out.print("R")
+         SUBX    2,i         ;X = X - 2
          BR      loop5
 R:       LDA     28,i 
-         CPA     tab,x
-         BRNE    S
-         STRO    Ss,d
-         SUBX    2,i
+         CPA     tab,x       ;if(tab[X] = 28)
+         BRNE    S           ;goto S
+         STRO    Ss,d        ;else System.out.print("S")
+         SUBX    2,i         ;X = X - 2
          BR      loop5
 S:       LDA     29,i 
-         CPA     tab,x
-         BRNE    T
-         STRO    Ts,d
-         SUBX    2,i
+         CPA     tab,x       ;if(tab[X] = 29)
+         BRNE    T           ;goto T
+         STRO    Ts,d        ;else System.out.print("T")
+         SUBX    2,i         ;X = X - 2
          BR      loop5
 T:       LDA     30,i 
-         CPA     tab,x
-         BRNE    U
-         STRO    Us,d
-         SUBX    2,i
+         CPA     tab,x       ;if(tab[X] = 30)
+         BRNE    U           ;goto U
+         STRO    Us,d        ;else System.out.print("U")
+         SUBX    2,i         ;X = X - 2
          BR      loop5
 U:       LDA     31,i 
-         CPA     tab,x
-         BRNE    V
-         STRO    Vs,d
-         SUBX    2,i
+         CPA     tab,x       ;if(tab[X] = 31)
+         BRNE    V           ;goto V
+         STRO    Vs,d        ;else System.out.print("V")
+         SUBX    2,i         ;X = X - 2
          BR      loop5
 V:       LDA     32,i 
-         CPA     tab,x
-         BRNE    W
-         STRO    Ws,d
-         SUBX    2,i
+         CPA     tab,x       ;if(tab[X] = 32)
+         BRNE    W           ;goto W
+         STRO    Ws,d        ;else System.out.print("W")
+         SUBX    2,i         ;X = X - 2
          BR      loop5
 W:       LDA     33,i 
-         CPA     tab,x
-         BRNE    X
-         STRO    Xs,d
-         SUBX    2,i
+         CPA     tab,x       ;if(tab[X] = 33)
+         BRNE    X           ;goto X
+         STRO    Xs,d        ;else System.out.print("X")
+         SUBX    2,i         ;X = X - 2
          BR      loop5
 X:       LDA     34,i 
-         CPA     tab,x
-         BRNE    Y
-         STRO    Ys,d
-         SUBX    2,i
+         CPA     tab,x       ;if(tab[X] = 34)
+         BRNE    Y           ;goto Y
+         STRO    Ys,d        ;else System.out.print("Y")
+         SUBX    2,i         ;X = X - 2
          BR      loop5
 Y:       LDA     35,i 
-         CPA     tab,x
-         BRNE    Rr
-         STRO    Zs,d
-         SUBX    2,i
+         CPA     tab,x       ;if(tab[X] = 35)
+         BRNE    Rr          ;goto Z
+         STRO    Zs,d        ;else System.out.print("Z")
+         SUBX    2,i         ;X = X - 2
          BR      loop5
-Rr:      DECO    tab,x
-         SUBX    2,i 
-         BR      loop5
+Rr:      DECO    tab,x       ;else System.out.print(tab[X])
+         SUBX    2,i         ;X = X - 2
+         BR      loop5       ;while(cont =! 0)
 ;
 done:    STOP
 ;
